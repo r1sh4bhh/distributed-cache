@@ -1,0 +1,6 @@
+# Distributed Cache - Requirements
+# Day 1: Only stdlib required
+# Day 3+: May add redis-py for comparison benchmarks
+
+# No external dependencies for core functionality
+# Python 3.7+ standard library provides all we need
