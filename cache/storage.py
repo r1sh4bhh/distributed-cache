@@ -30,6 +30,10 @@ class StorageEngine:
         self.eviction_policy = eviction_policy  # "lru", "fifo", "random"
         self.memory_used = 0
         self.persistence = persistence  # Optional PersistenceManager
+        
+        # Import here to avoid circular imports
+        from cache.data_structures import DataStructureManager
+        self.ds_manager = DataStructureManager()
     
     def set(self, key: str, value: Any, ttl: Optional[int] = None) -> bool:
         """
