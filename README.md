@@ -13,6 +13,13 @@ A custom distributed cache implementation in Python, benchmarked against Redis c
 - **Multi-client support** - concurrent connections
 - **Redis protocol** - RESP (Redis Serialization Protocol)
 
+### Persistence (Day 2)
+- **RDB Snapshots** - Point-in-time backups (atomic saves)
+- **AOF (Append-Only File)** - Command logging for recovery
+- **Auto-recovery** - Restore from disk on startup
+- **Periodic saves** - Background RDB snapshots (every 60s)
+- **AOF rewrite** - Compaction when AOF gets large
+
 ### Performance
 - Sub-millisecond operations
 - 10K+ operations per second

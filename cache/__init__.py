@@ -1,7 +1,7 @@
 from cache.storage import StorageEngine, CacheEntry
 from cache.protocol import RESPParser, CommandProcessor
 from cache.server import CacheServer
-from cache.client import CacheClient
+from cache.persistence import RDBPersistence, AOFPersistence, PersistenceManager
 
 __all__ = [
     'StorageEngine',
@@ -9,5 +9,7 @@ __all__ = [
     'RESPParser',
     'CommandProcessor',
     'CacheServer',
-    'CacheClient'
+    'RDBPersistence',
+    'AOFPersistence',
+    'PersistenceManager'
 ]

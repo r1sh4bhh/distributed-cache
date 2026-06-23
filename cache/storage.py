@@ -24,11 +24,12 @@ class CacheEntry:
 class StorageEngine:
     """In-memory storage with LRU eviction"""
     
-    def __init__(self, max_memory_mb: int = 100, eviction_policy: str = "lru"):
+    def __init__(self, max_memory_mb: int = 100, eviction_policy: str = "lru", persistence=None):
         self.store: Dict[str, CacheEntry] = {}
         self.max_memory_bytes = max_memory_mb * 1024 * 1024
         self.eviction_policy = eviction_policy  # "lru", "fifo", "random"
         self.memory_used = 0
+        self.persistence = persistence  # Optional PersistenceManager
     
     def set(self, key: str, value: Any, ttl: Optional[int] = None) -> bool:
         """
@@ -57,6 +58,13 @@ class StorageEngine:
         # Store entry
         self.store[key] = entry
         self.memory_used += value_size
+        
+        # Log to persistence (if enabled)
+        if self.persistence:
+            if ttl:
+                self.persistence.log_command("SET", [key, value, ttl])
+            else:
+                self.persistence.log_command("SET", [key, value])
         
         return True
     

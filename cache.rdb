@@ -1,0 +1,17 @@
+{
+  "timestamp": 1782205019.9531627,
+  "entries": {
+    "user:1": {
+      "value": "Rishabh",
+      "created_at": 1782204920.4094748,
+      "accessed_at": 1782204920.4098966,
+      "ttl": null
+    },
+    "temp": {
+      "value": "data",
+      "created_at": 1782204920.41001,
+      "accessed_at": 1782204920.4100103,
+      "ttl": 2
+    }
+  }
+}

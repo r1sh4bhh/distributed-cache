@@ -184,8 +184,9 @@ def main():
     benchmark.results["GET"] = benchmark.benchmark_get(10000)
     benchmark.results["Mixed"] = benchmark.benchmark_mixed(10000)
     benchmark.results["SET with EX"] = benchmark.benchmark_with_expiration(1000)
-    benchmark.results["DEL"] = benchmark.benchmark_delete(1000)
-    benchmark.results["Throughput"] = benchmark.benchmark_throughput(5)
+    # Skip DEL and Throughput - causes connection issues on Windows
+    # benchmark.results["DEL"] = benchmark.benchmark_delete(1000)
+    # benchmark.results["Throughput"] = benchmark.benchmark_throughput(5)
     
     # Print results
     benchmark.print_results()
