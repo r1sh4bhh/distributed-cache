@@ -6,6 +6,9 @@ from cache.data_structures import CacheList, CacheHash, CacheSet, DataStructureM
 from cache.transactions import Transaction, TransactionManager
 from cache.bit_operations import BitField, BitOperationManager
 from cache.scan import ScanManager
+from cache.connection_pool import Connection, ConnectionPool
+from cache.pipelining import Pipeline, PipelineProcessor, PipelineClient
+from cache.async_io import AsyncRequest, AsyncWorker, AsyncClient
 
 __all__ = [
     'StorageEngine',
@@ -24,5 +27,13 @@ __all__ = [
     'TransactionManager',
     'BitField',
     'BitOperationManager',
-    'ScanManager'
+    'ScanManager',
+    'Connection',
+    'ConnectionPool',
+    'Pipeline',
+    'PipelineProcessor',
+    'PipelineClient',
+    'AsyncRequest',
+    'AsyncWorker',
+    'AsyncClient'
 ]
