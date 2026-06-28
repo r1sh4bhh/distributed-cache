@@ -168,8 +168,8 @@ class StorageEngine:
             self.delete(k)
         
         return {
-            "keys_count": len(self.store),
-            "memory_used_bytes": self.memory_used,
+            "total_keys": len(self.store),
+            "memory_used": self.memory_used,
             "memory_used_mb": self.memory_used / (1024 * 1024),
             "max_memory_mb": self.max_memory_bytes / (1024 * 1024),
             "eviction_policy": self.eviction_policy
